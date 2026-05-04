@@ -4,8 +4,8 @@ import { Analytics } from '@vercel/analytics/next'
 import { FloatingCallButton } from '@/components/floating-call-button'
 import './globals.css'
 
-const _geist = Geist({ subsets: ["latin"] });
-const _geistMono = Geist_Mono({ subsets: ["latin"] });
+const geist = Geist({ subsets: ["latin"] })
+const geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -16,44 +16,118 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: 'Keshav Unisex Salon & Institute - Premium Hair & Beauty Services',
-  description: 'Experience luxury salon services and professional beauty training at Keshav Unisex Salon & Institute. Expert stylists, premium treatments, and courses for aspiring professionals.',
-  generator: 'v0.app',
-  keywords: 'salon, hair styling, beauty services, academy, training, professional, keshav',
-  icons: {
-    icon: [
+  metadataBase: new URL('https://keshavunisexsalonandinstitute.com'),
+
+  title: {
+    default: 'Best Salon in Agra | Keshav Unisex Salon & Institute',
+    template: '%s | Keshav Salon Agra',
+  },
+
+  description:
+    'Looking for the best salon in Agra? Keshav Unisex Salon offers premium haircuts, bridal makeup, beauty services, and professional training. Book your appointment today.',
+
+  keywords: [
+    'best salon in agra',
+    'salon near me agra',
+    'hair salon agra',
+    'bridal makeup agra',
+    'beauty salon agra',
+    'keshav salon agra',
+  ],
+
+  openGraph: {
+    title: 'Best Salon in Agra | Keshav Unisex Salon',
+    description:
+      'Luxury salon services in Agra with expert stylists and beauty training.',
+    url: 'https://keshavunisexsalonandinstitute.com',
+    siteName: 'Keshav Salon Agra',
+    images: [
       {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
+        url: '/keshav-logo.png',
+        width: 800,
+        height: 600,
+        alt: 'Keshav Salon Agra',
       },
     ],
-    apple: '/apple-icon.png',
-  },
-  openGraph: {
-    title: 'Keshav Unisex Salon & Institute',
-    description: 'Premium salon services and professional beauty training',
+    locale: 'en_IN',
     type: 'website',
-    siteName: 'Keshav Unisex Salon & Institute',
+  },
+
+  robots: {
+    index: true,
+    follow: true,
   },
 }
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
   return (
     <html lang="en">
       <body className="font-sans antialiased">
         {children}
+
+        {/* 🔥 LOCAL SEO STRUCTURED DATA */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BeautySalon",
+              name: "Keshav Unisex Salon & Institute",
+              image:
+                "https://keshavunisexsalonandinstitute.com/keshav-logo.png",
+              "@id": "https://keshavunisexsalonandinstitute.com",
+              url: "https://keshavunisexsalonandinstitute.com",
+              telephone: "+916396222986",
+
+              address: {
+                "@type": "PostalAddress",
+                streetAddress:
+                  "Shop No. 12, Mayur Colony, Bhawna Estate Road, Opposite Kaveri Kastub",
+                addressLocality: "Sikandra, Agra",
+                addressRegion: "UP",
+                postalCode: "282007",
+                addressCountry: "IN",
+              },
+
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: 27.2186129,
+                longitude: 77.9621819,
+              },
+
+              openingHoursSpecification: [
+  {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Friday",
+      "Saturday",
+      "Sunday",
+    ],
+    opens: "10:00",
+    closes: "20:00",
+  },
+  {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: "Thursday",
+    opens: "00:00",
+    closes: "00:00",
+  },
+],
+              sameAs: [
+                "https://www.instagram.com/keshavunisexsalonofficial/",
+               
+              ],
+            }),
+          }}
+        />
+
         <FloatingCallButton />
         <Analytics />
       </body>
