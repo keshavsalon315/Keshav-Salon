@@ -1,0 +1,21 @@
+{
+  "name": "Keshav Unisex Salon & Institute",
+  "short_name": "Keshav Salon",
+  "description": "Best Salon in Agra for hair styling, beauty services, bridal makeup and academy training.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4f8b67",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
