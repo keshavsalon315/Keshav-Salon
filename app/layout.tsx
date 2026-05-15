@@ -18,6 +18,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://keshavunisexsalonandinstitute.com'),
 
+  /* 🔥 ADDED CANONICAL URL */
+  alternates: {
+    canonical: '/',
+  },
+
   title: {
     default: 'Best Salon in Agra | Keshav Unisex Salon & Institute',
     template: '%s | Keshav Salon Agra',
@@ -95,15 +100,19 @@ export const metadata: Metadata = {
 
   twitter: {
     card: 'summary_large_image',
+
     title: 'Best Salon in Agra | Keshav Unisex Salon',
+
     description:
       'Premium salon services, bridal makeup, hair styling, and beauty training in Agra.',
+
     images: ['/keshav-logo.png'],
   },
 
   robots: {
     index: true,
     follow: true,
+
     googleBot: {
       index: true,
       follow: true,
@@ -124,7 +133,7 @@ export default function RootLayout({
       <body className={`${geist.className} antialiased`}>
         {children}
 
-        {/* LOCAL SEO STRUCTURED DATA */}
+        {/* 🔥 LOCAL SEO STRUCTURED DATA */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
