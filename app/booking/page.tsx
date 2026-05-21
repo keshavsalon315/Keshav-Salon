@@ -6,8 +6,13 @@ import { BookingForm } from '@/components/booking-form'
 
 export const metadata: Metadata = {
   title: 'Book Appointment - Keshav Unisex Salon & Institute',
-  description: 'Schedule your salon appointment or contact Keshav for more information about our services.',
+  description:
+    'Schedule your salon appointment or contact Keshav for more information about our services.',
   keywords: 'booking, appointment, contact, salon, keshav',
+  robots: {
+    index: false,
+    follow: true,
+  },
 }
 
 export default function BookingPage() {

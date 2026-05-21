@@ -1,14 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /admin
-Disallow: /private
 
-# Sitemap
-Sitemap: https://luxesalon.com/sitemap.xml
-
-# Specific rules for common bots
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
+Sitemap: https://keshavunisexsalonandinstitute.com/sitemap.xml
